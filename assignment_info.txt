@@ -1,0 +1,29 @@
+GRADE 0/30 – This is not the assigned problem. The problem shown in class was not about squares, but adding two integers.
+
+This is a TEMPORARY GRADE. We have accepted your proposal for doing a project instead of normal classwork due to your previous experience in this class. This assignment grade will change once I hear a response from you.
+
+Your project must contain the following topics, with comments in your code explaining exactly what lines of code demonstrate what concepts.
+
+Variables = $var
+File Input = bootstrap.php line 32
+File Output =
+Sequence
+Selection
+Repetition
+Boolean Logic
+Arrays
+Functions
+Coupling = https://r.je/slutty-software-tight-and-loose-coupling.html
+Cohesion
+
+Your program can be in one of the following languages: PHP, Java, C, or C#. If you use C, C#, or Java, include the Visual Studio/Eclipse/IDEA project file, as well as any required libraries.
+
+Each week, instead of this document, you will provide an update on how your project is coming along, and any issues you have come up with, or things you have learned. These should be detailed, and contain about as much time investment/detail as would be expected from “Unit Exercises”.
+
+You do not need to submit your quizzes, this is how I will grade the actual content of your project. Submit a small report, along with your up to date project files in an attached .zip when the quizzes are due. This applies to both the midterm, and the final quiz.
+
+You will still be expected to submit “Unit Analyses” like normal.
+
+Email me back at lcherry-allen@olympic.edu once you read through this, to let me know if you want to continue with this project, or if you need any clarification.
+
+If you do not proceed with this project, you will need to resubmit this assignment with the correct problem from class to obtain credit.

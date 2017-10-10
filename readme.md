@@ -5,7 +5,7 @@ This is a school project that I am using to build a small application that will 
 This assignment must meet the requirements laid out by the instructor
 
 - [ ] Must be written in one of the following languages
-  - [ ] php
+  - [x] php
   - [ ] C#
   - [ ] Java
   - [ ] C
@@ -37,10 +37,14 @@ Time Tables
 
 ## Week 2 | October 10th
 - [ ] Define the full structure of the application and build all the routes
-- [ ] Connect to MySQL DB (remote) and build a functioning login page
+  - [x] Index (Login)
+  - [ ] TimesPage
+- [x] Connect to MySQL DB (remote) and build a functioning login page
+  - Now using Auth0 and Firebase (firebase not working)
 
 ### Instructions
 1. clone this repo using `git clone https://github.com/zafuzi/lfdc`
-2. run `php -S localhost:8000` in the cloned repos main directory
+2. run `composer install` in the cloned repos root directory
+2. run `php -S localhost:8000` in the cloned repos root directory
 3. navigate browser to `localhost:8000`
 4. ENJOY!

@@ -8,13 +8,6 @@ use JsPhpize\Lexer\Pattern;
 class JsPhpizeOptions
 {
     /**
-     * Flag for an allowed truncated parenthesis.
-     *
-     * @const int
-     */
-    const FLAG_TRUNCATED_PARENTHESES = 1;
-
-    /**
      * Prefix for specific constants.
      *
      * @const string
@@ -27,11 +20,6 @@ class JsPhpizeOptions
      * @const string
      */
     const VAR_PREFIX = '__jpv_';
-
-    /**
-     * @var int
-     */
-    protected $flags = 0;
 
     /**
      * Pass options as array or no parameters for all options on default value.
@@ -136,28 +124,5 @@ class JsPhpizeOptions
     public function getConstPrefix()
     {
         return $this->getOption('constPrefix', static::CONST_PREFIX);
-    }
-
-    /**
-     * @return int
-     */
-    public function hasFlag($flag)
-    {
-        return $this->flags & $flag;
-    }
-
-    /**
-     * @param int  $flag    flag to set
-     * @param bool $enabled flag state
-     */
-    public function setFlag($flag, $enabled)
-    {
-        if ($enabled) {
-            $this->flags |= $flag;
-
-            return;
-        }
-
-        $this->flags &= ~$flag;
     }
 }

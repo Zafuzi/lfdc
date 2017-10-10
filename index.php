@@ -1,57 +1,51 @@
 <?php
 require 'bootstrap.php';
 
-  /**
-   * Home pages list
-   */
-  $app->action('/', function (&$view) {
-      $view  = 'index';
-      $vars= array(
-          'title' => 'Home',
-          'links' => array(
-            array('route' => 'login', 'name' => 'The Login page example'),
-            array('route' => 'cities', 'name' => 'The City API search example')
-          )
-      );
-      return compact('vars');
-  });
+// $fire->push("users", array("fname"=>"Monica", "lname" => "Harper", "email"=>"monicawalkswithfaith@yahoo.com", "password"=>"password"));
+// $users = $fire->get("users/*/fname=");
+// foreach($user in $users)
+// printf($username);
 
-  /**
-   * Basic user form
-   */
-  $app->action('login', function () {
-      $username = isset($_POST['username']) ? $_POST['username'] : null;
-      $password = isset($_POST['password']) ? $_POST['password'] : null;
+/**
+ * Home pages list
+ */
 
-      $message['error']   = !!$_POST;
-      $message['success'] = false;
+$app->action('/', function (&$view) {
+    global $app;
+    $view  = 'index';
+    $vars= array(
+        'title' => 'Home',
+        'userInfo' => $app->getUserInfo(),
+        'links' => array(
+          array('route' => 'login', 'name' => 'The Login page example'),
+          array('route' => 'cities', 'name' => 'The City API search example')
+        )
+    );
+    return compact('vars');
+});
 
-      if (trim($username) && trim($password)) {
-          $message['error']   = false;
-          $message['success'] = true;
-      }
+/**
+ * Basic user form
+ */
+$app->action('login', function () {
+    $username = isset($_POST['username']) ? $_POST['username'] : null;
+    $password = isset($_POST['password']) ? $_POST['password'] : null;
 
-      return array(
-          'message' => $message,
-          'user'    => compact('username', 'password', 'invalid')
-      );
-  });
+    $message['error']   = !!$_POST;
+    $message['success'] = false;
 
-  /**
-   * Cities list search
-   */
-  $app->action('cities', function () {
-      $query  = isset($_GET['q']) ? trim($_GET['q']) : null;
-      $cities = array('total' => 0, 'result' => null);
+    if (trim($username) && trim($password)) {
+        $message['error']   = false;
+        $message['success'] = true;
+    }
 
-      if ($query) {
-          $ch = curl_init('http://gd.geobytes.com/AutoCompleteCity?q=' . $query);
-          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-          $cities['result'] = json_decode(curl_exec($ch));
-          $cities['total']  = count($cities['result']);
-      }
+    return array(
+        'message' => $message,
+        'user'    => compact('username', 'password', 'invalid')
+    );
+});
 
-      return compact('cities', 'query');
-  });
-
-?>
+$app->action('logout', function(){
+  global $auth0;
+  $auth0->logout();
+});

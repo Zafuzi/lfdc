@@ -1,8 +1,8 @@
 extends layout.pug
 block content
-  h2 Hello World
-  nav 
-    ul
-      each link in vars.links
-        li
-          a(href=link.route)= link.name
+  #login
+    h2 Hello World
+    if vars.userInfo
+      button.btn.btn-logout Logout
+    else
+      button.btn.btn-login Sign In

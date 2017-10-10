@@ -8,6 +8,8 @@ use JsPhpize\Parser\Parser;
 
 class JsPhpize extends JsPhpizeOptions
 {
+    const FLAG_TRUNCATED_PARENTHESES = 1;
+
     /**
      * @var string
      */
@@ -32,6 +34,11 @@ class JsPhpize extends JsPhpizeOptions
      * @var array
      */
     protected $sharedVariables = array();
+
+    /**
+     * @var int
+     */
+    protected $flags = 0;
 
     /**
      * Compile file or code (detect if $input is an exisisting file, else use it as content).
@@ -78,6 +85,29 @@ class JsPhpize extends JsPhpizeOptions
         $php = $compiler->compileDependencies($dependencies) . $start . $php . $end;
 
         return preg_replace('/\{(\s*\}\s*\{)+$/', '{', $php);
+    }
+
+    /**
+     * @return int
+     */
+    public function hasFlag($flag)
+    {
+        return $this->flags & $flag;
+    }
+
+    /**
+     * @param int  $flag    flag to set
+     * @param bool $enabled flag state
+     */
+    public function setFlag($flag, $enabled = true)
+    {
+        if ($enabled) {
+            $this->flags |= $flag;
+
+            return;
+        }
+
+        $this->flags &= ~$flag;
     }
 
     /**

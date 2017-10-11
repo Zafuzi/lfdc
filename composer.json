@@ -1,5 +1,11 @@
 {
-    "require": {
-        "pug-php/pug": "^2.7"
-    }
+  "minimum-stability": "stable",
+  "require": {
+    "pug-php/pug": "^2.7",
+    "js-phpize/js-phpize": "^1.11",
+    "bramus/router": "dev-master",
+    "auth0/auth0-php": "~4.0",
+    "firebase/php-jwt": "^3.0",
+    "vlucas/phpdotenv": "^2.4"
+  }
 }

@@ -20,15 +20,6 @@ use JsPhpize\Nodes\Variable;
 class Compiler
 {
     /**
-     * @const string
-     */
-    const STATIC_CALL_FUNCTIONS = 'array,echo,print,printf,exit,__halt_compiler,abstract,and,array,as,break,
-        callable,case,catch,class,clone,const,continue,declare,default,die,do,echo,else,elseif,empty,enddeclare,
-        endfor,endforeach,endif,endswitch,endwhile,eval,exit,extends,final,for,foreach,function,global,goto,if,
-        implements,include,include_once,instanceof,insteadof,interface,isset,list,namespace,new,or,print,private,
-        protected,public,require,require_once,return,static,switch,throw,trait,try,unset,use,var,while,xor';
-
-    /**
      * @var JsPhpize
      */
     protected $engine;
@@ -245,14 +236,93 @@ class Compiler
             $name = $function->name;
             $staticCall = $name . '(' . $arguments . ')';
 
-            $functions = str_replace(array("\n", "\t", "\r", ' '), '', static::STATIC_CALL_FUNCTIONS);
-            if ($applicant === 'new' || in_array($name, explode(',', $functions))) {
+            if ($applicant === 'new') {
                 return $staticCall;
             }
 
-            return '(function_exists(' . var_export($name, true) . ') ? ' .
+            if (in_array($name, array(
+                'array',
+                'echo',
+                'print',
+                'printf',
+                'exit',
+            ))) {
+                return $staticCall;
+            }
+
+            if (in_array($name, array(
+                '__halt_compiler',
+                'abstract',
+                'and',
+                'array',
+                'as',
+                'break',
+                'callable',
+                'case',
+                'catch',
+                'class',
+                'clone',
+                'const',
+                'continue',
+                'declare',
+                'default',
+                'die',
+                'do',
+                'echo',
+                'else',
+                'elseif',
+                'empty',
+                'enddeclare',
+                'endfor',
+                'endforeach',
+                'endif',
+                'endswitch',
+                'endwhile',
+                'eval',
+                'exit',
+                'extends',
+                'final',
+                'for',
+                'foreach',
+                'function',
+                'global',
+                'goto',
+                'if',
+                'implements',
+                'include',
+                'include_once',
+                'instanceof',
+                'insteadof',
+                'interface',
+                'isset',
+                'list',
+                'namespace',
+                'new',
+                'or',
+                'print',
+                'private',
+                'protected',
+                'public',
+                'require',
+                'require_once',
+                'return',
+                'static',
+                'switch',
+                'throw',
+                'trait',
+                'try',
+                'unset',
+                'use',
+                'var',
+                'while',
+                'xor',
+            ))) {
+                return $staticCall;
+            }
+
+            return 'function_exists(' . var_export($name, true) . ') ? ' .
                 $staticCall . ' : ' .
-                $dynamicCall . ')';
+                $dynamicCall;
         }
 
         if (count($functionCall->children)) {

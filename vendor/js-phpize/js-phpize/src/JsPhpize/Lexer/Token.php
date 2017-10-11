@@ -2,8 +2,35 @@
 
 namespace JsPhpize\Lexer;
 
-class Token extends DataBag
+class Token
 {
+    /**
+     * @var array
+     */
+    protected $data;
+
+    public function __construct($type, array $data)
+    {
+        $this->data = array_merge(array(
+            'type' => $type,
+        ), $data);
+    }
+
+    public function is($value)
+    {
+        return in_array($value, array($this->type, $this->value));
+    }
+
+    protected function typeIn($values)
+    {
+        return in_array($this->type, $values);
+    }
+
+    protected function valueIn($values)
+    {
+        return in_array($this->value, $values);
+    }
+
     public function isIn($values)
     {
         $values = is_array($values) ? $values : func_get_args();
@@ -74,5 +101,10 @@ class Token extends DataBag
     public function isFunction()
     {
         return $this->type === 'function' || $this->type === 'keyword' && $this->value === 'function';
+    }
+
+    public function __get($key)
+    {
+        return isset($this->data[$key]) ? $this->data[$key] : null;
     }
 }

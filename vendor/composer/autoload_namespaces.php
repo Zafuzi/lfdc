@@ -7,7 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Pug\\' => array($vendorDir . '/pug-php/pug/src'),
+    'OAuth2' => array($vendorDir . '/adoy/oauth2/src'),
     'NodejsPhpFallback\\' => array($vendorDir . '/nodejs-php-fallback/nodejs-php-fallback/src'),
     'JsPhpize' => array($vendorDir . '/js-phpize/js-phpize/src'),
     'Jade\\' => array($vendorDir . '/pug-php/pug/src'),
+    'Bramus' => array($vendorDir . '/bramus/router/src'),
 );

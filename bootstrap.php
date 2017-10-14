@@ -35,7 +35,7 @@ class Application{
     protected $route;
     public function __construct($srcPath, $pathInfo, $auth0){
         $this->route = ltrim($pathInfo, '/');
-        $this->userInfo = $auth0->getUser();
+        $this->auth0 = $auth0;
         spl_autoload_register(function ($class) use ($srcPath) {
             if (
                 strstr($class, 'Pug') /* new name */ ||
@@ -55,26 +55,26 @@ class Application{
     }
 
     public function getUserInfo(){
-      return $this->userInfo;
+      return $this->auth0->getUser();
     }
 }
 $app = new Application('./vendor/pug-php/pug/src/',
                         isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : (isset($argv, $argv[1]) ? $argv[1] : ''), $auth0);
 
 // Setup FireBase
-// class FireBase{
-//   public function __construct(){
-//     $this->firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
-//   }
-//   public function set($path, $value) {
-//     $this->firebase->set(DEFAULT_PATH . '/' . $path, $value);
-//   }
-//   public function get($path){
-//     return $this->firebase->get($path);
-//   }
-//   public function push($path, $value){
-//       $this->firebase->push(DEFAULT_PATH . '/' . $path, $value);
-//   }
-// }
-//
-// $fire = new Firebase();
+class FireBase{
+  public function __construct(){
+    $this->firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
+  }
+  public function set($path, $value) {
+    $this->firebase->set(DEFAULT_PATH . '/' . $path, $value);
+  }
+  public function get($path){
+    return $this->firebase->get($path);
+  }
+  public function push($path, $value){
+      $this->firebase->push(DEFAULT_PATH . '/' . $path, $value);
+  }
+}
+
+$fire = new Firebase();

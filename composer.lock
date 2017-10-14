@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "17ec0dc850b9748da69e30ab24a42a59",
-    "content-hash": "790870f730e80be23bbc874c58d672f9",
+    "content-hash": "5cddb352619cfa02a4c90ecfba128eac",
     "packages": [
         {
             "name": "adoy/oauth2",
@@ -45,7 +44,7 @@
                 }
             ],
             "description": "Light PHP wrapper for the OAuth 2.0 protocol (based on OAuth 2.0 Authorization Protocol draft-ietf-oauth-v2-15)",
-            "time": "2015-08-03 19:57:06"
+            "time": "2015-08-03T19:57:06+00:00"
         },
         {
             "name": "auth0/auth0-php",
@@ -91,7 +90,7 @@
                 }
             ],
             "description": "Auth0 PHP SDK.",
-            "time": "2017-07-24 20:27:25"
+            "time": "2017-07-24T20:27:25+00:00"
         },
         {
             "name": "bramus/router",
@@ -137,7 +136,7 @@
                 "router",
                 "routing"
             ],
-            "time": "2017-10-06 21:47:11"
+            "time": "2017-10-06T21:47:11+00:00"
         },
         {
             "name": "firebase/php-jwt",
@@ -180,7 +179,7 @@
             ],
             "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
             "homepage": "https://github.com/firebase/php-jwt",
-            "time": "2015-07-22 18:31:08"
+            "time": "2015-07-22T18:31:08+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -245,7 +244,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2017-06-22 18:50:49"
+            "time": "2017-06-22T18:50:49+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -296,7 +295,7 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2016-12-20 10:07:11"
+            "time": "2016-12-20T10:07:11+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -361,7 +360,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2017-03-20 17:10:46"
+            "time": "2017-03-20T17:10:46+00:00"
         },
         {
             "name": "js-phpize/js-phpize",
@@ -401,7 +400,49 @@
                 }
             ],
             "description": "Convert js-like syntax to standalone PHP code.",
-            "time": "2017-09-06 09:20:12"
+            "time": "2017-09-06T09:20:12+00:00"
+        },
+        {
+            "name": "ktamas77/firebase-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ktamas77/firebase-php.git",
+                "reference": "fbfeefe8437672b983a9efb340bfd0db08bfe71a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ktamas77/firebase-php/zipball/fbfeefe8437672b983a9efb340bfd0db08bfe71a",
+                "reference": "fbfeefe8437672b983a9efb340bfd0db08bfe71a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tamas Kalman",
+                    "email": "ktamas77@gmail.com"
+                }
+            ],
+            "description": "Firebase PHP Client",
+            "homepage": "https://github.com/ktamas77/firebase-php",
+            "keywords": [
+                "firebase",
+                "rest",
+                "wrapper"
+            ],
+            "time": "2016-07-29T07:56:15+00:00"
         },
         {
             "name": "nodejs-php-fallback/nodejs-php-fallback",
@@ -446,7 +487,7 @@
                 }
             ],
             "description": "Allow you to call node.js module or scripts throught PHP and call a fallback function if node.js is not available",
-            "time": "2017-07-25 11:53:15"
+            "time": "2017-07-25T11:53:15+00:00"
         },
         {
             "name": "psr/http-message",
@@ -496,7 +537,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-08-06 14:39:51"
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "pug-php/pug",
@@ -660,7 +701,7 @@
                 "pug",
                 "template"
             ],
-            "time": "2017-09-05 16:02:04"
+            "time": "2017-09-05T16:02:04+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -710,14 +751,15 @@
                 "env",
                 "environment"
             ],
-            "time": "2016-09-01 10:05:43"
+            "time": "2016-09-01T10:05:43+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "bramus/router": 20
+        "bramus/router": 20,
+        "ktamas77/firebase-php": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

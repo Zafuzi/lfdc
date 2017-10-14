@@ -15,12 +15,12 @@ header {
     width: 100vw;
     background: #67A1E0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 header h1 {
     color: #fff;
-    font-size: 150%;
+    font-size: 110%;
     margin: 15px;
 }
 
@@ -36,12 +36,15 @@ main {
 }
 .btn {
     background: #67A1E0;
-    margin-left: auto;
     border: none;
     color: #fff;
     padding: 8px 16px;
     cursor: pointer;
     border-radius: 3px;
+}
+.btn-header{
+  background: none;
+
 }
 #login{
   max-width: 500px;

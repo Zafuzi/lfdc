@@ -11,36 +11,17 @@ This assignment must meet the requirements laid out by the instructor
   - [ ] C
 - [ ] Each week provide an progress update
 - [ ] Document the use all of the following concepts:
-  - [ ] Variables
+  - [x] Variables
   - [ ] File Input
   - [ ] File Output
   - [ ] Sequence
-  - [ ] Selection
+  - [x] Selection
   - [ ] Repetition
-  - [ ] Boolean Logic
-  - [ ] Arrays
-  - [ ] Functions
+  - [x] Boolean Logic
+  - [x] Arrays
+  - [x] Functions
   - [ ] Coupling
   - [ ] Cohesion
-
-## Design
-Login Page  
-<img src="prototype/LoginPage.png" alt="LoginPage" style="max-width: 500px">
-
-Time Tables  
-<img src="prototype/TimesPage.png" alt="TimesPage" style="max-width: 500px">
-
-## Week 1
-- Project started
-- Implemented basic routing and project structure
-- Implemented basic pug templates to use instead of html
-
-## Week 2 | October 10th
-- [ ] Define the full structure of the application and build all the routes
-  - [x] Index (Login)
-  - [ ] TimesPage
-- [x] Connect to MySQL DB (remote) and build a functioning login page
-  - Now using Auth0 and Firebase (firebase not working)
 
 ### Instructions
 1. clone this repo using `git clone https://github.com/zafuzi/lfdc`

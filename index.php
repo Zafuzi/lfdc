@@ -6,11 +6,13 @@ require 'bootstrap.php';
 
 // Home Page
 $app->action('/', function (&$view) {
+    // EXAMPLE variables
     global $app;
     $userInfo = $app->getUserInfo();
     $view = 'index';
-    // $view = 'index';
+    // EXAMPLE selection
     if($userInfo == ''){
+      // EXAMPLE array
       $vars= array(
           'title' => 'Home',
           'userInfo' => $userInfo

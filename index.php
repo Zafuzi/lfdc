@@ -1,8 +1,13 @@
 <?php
 require 'bootstrap.php';
 
-// $fire->push("users", array("fname"=>"Monica", "lname" => "Harper", "email"=>"monicawalkswithfaith@yahoo.com", "password"=>"password"));
-// $users = $fire->get("users/*/fname=Monica");
+// $fire->push("clients/-KwarEGvDFGLuOGkAkuc/times/", array(
+//                       "date"=> "10/14/17",
+//                       "sign_in"=> "7:01",
+//                       "sign_out"=> "14:09"
+//                     )
+//           );
+$clients = json_decode($fire->get("clients/"), true);
 
 // Home Page
 $app->action('/', function (&$view) {
@@ -26,11 +31,14 @@ $app->action('/', function (&$view) {
 // Times Page
 $app->action('times', function (&$view) {
   global $app;
-    $vars= array(
-        'title' => 'Times',
-        'userInfo' => $app->getUserInfo()
-    );
-    return compact('vars');
+  global $clients;
+
+  $vars= array(
+      'title' => 'Times',
+      'userInfo' => $app->getUserInfo(),
+      'clients' => $clients
+  );
+  return compact('vars');
 });
 
 

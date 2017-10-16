@@ -75,6 +75,9 @@ class FireBase{
   public function push($path, $value){
       $this->firebase->push(DEFAULT_PATH . '/' . $path, $value);
   }
+  public function update($path, $value){
+      $this->firebase->update(DEFAULT_PATH . '/' . $path, $value);
+  }
 }
 
 $fire = new Firebase();

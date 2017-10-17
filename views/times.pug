@@ -1,9 +1,18 @@
 extends layout
-
 block content
   center
     h2 Times
-    select
-      option Client 1
-      option Client 2
-      option Client 3
+    select.selector
+      each client, key in vars.clients
+        option(value=key).
+          #{client.fname}
+          #{client.lname}
+    .grid.times_table
+      .row.header
+        p.col Date
+        p.col Sign In
+        p.col Sign Out
+        p.col Total
+block scripts
+  script.
+    var clients = !{vars.clients}

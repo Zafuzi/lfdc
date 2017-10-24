@@ -1,0 +1,23 @@
+.row
+  h3 Add a New Client
+  input(type="button" onclick="toggle('#addClients', null, 'New Client')" value="Close").btn.pullRight
+form(autocomplete)
+  div
+    h4 Guardians
+    label First Name
+      input(type="fname" name="pfname" placeholder="First Name")
+    label Last Name
+      input(type="lname" name="plname" placeholder="Last Name")
+    label Email Address
+      input(type="email" name="email" placeholder="someone@example.com")
+    input(type="button" onclick="inject('guardian', this)" value="Add Another Gaurdian").btn.pullRight
+    
+  div
+    h4 Children
+    label First Name
+      input(type="fname" name="cfname" placeholder="First Name")
+    label Last Name
+      input(type="lname" name="clname" placeholder="Last Name")
+    label Age
+      input(type="age" name="cage" placeholder="1")
+    input(type="button" onclick="inject('children', this)" value="Add Another Child").btn.pullRight

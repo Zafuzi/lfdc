@@ -1,0 +1,15 @@
+extends layout.pug
+block content
+  main.top_left
+    h2 Manage Clients
+    
+    input(type="button" onclick="toggle('#addClients', null, 'New Client')" value="New Client").btn
+    
+    .hidden.modal#addClients
+      include ./components/addClient.pug
+      
+      
+    .clients
+      each client, key in vars.clients
+        //- TODO Change this to use DB stored client ID
+        a(href='/client?fname=#{client.fname}&lname=#{client.lname}') #{client.fname} #{client.lname}

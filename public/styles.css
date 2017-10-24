@@ -17,34 +17,65 @@ header {
     display: flex;
     justify-content: space-between;
 }
+nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul li{
+  margin: 0 10px;
+}
+nav ul li a{
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-decoration: none;
+}
 
 header h1 {
     color: #fff;
     font-size: 110%;
     margin: 15px;
+    max-width: 300px;
 }
-
 main {
     max-width: 900px;
     margin: 0 auto;
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-flow: column;
     flex: 1;
 }
-.btn {
+main.top_left{
+  justify-content: flex-start;
+  margin: 0 10px;
+}
+.btn{
     background: #67A1E0;
     border: none;
     color: #fff;
     padding: 8px 16px;
     cursor: pointer;
     border-radius: 3px;
+    transition: all .3s;
+    max-height: 3rem;
+    max-width: 250px;
 }
 .btn-header{
   background: none;
-
+  text-align: right;
+  max-width: 300px;
+  margin-left: auto;
 }
 #login{
   max-width: 500px;
@@ -52,10 +83,10 @@ main {
   margin: 0 auto;
 }
 
-
 /* Time Grid */
 .times_table{
   max-width: 600px;
+  margin: 10px auto;
 }
 .grid{
   display: flex;
@@ -64,17 +95,80 @@ main {
 }
 .header{
   background: #ddd;
+  padding: 0;
 }
 .row{
   display: flex;
   flex-flow: row no-wrap;
   border-bottom: 1px solid #ddd;
   width: 100%;
+  padding: 0;
 }
 .col{
   display: flex;
   flex: 1;
   justify-content: flex-start;
   align-items: center;
-  padding: 0 10px;
+  padding: 10px;
+  margin: 0;
+}
+
+.hidden{
+  display: none;
+}
+.modal{
+  top: 0;
+  left: 50%;
+  position: fixed;
+  background: #fff;
+  border: 2px solid #eee;
+  box-shadow: 2px 2px 4px rgba(0,0,0,.18);
+  height: auto;
+  width: 500px;
+  transform: translate3d(-50%, 50%, 0);
+  padding: 1em;
+  z-index: 99;
+}
+.modal_bg{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  background: rgba(0,0,0, .8);
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+}
+.clients{
+  display: flex;
+  flex-flow: column;
+}
+.clients a{
+  margin: 10px;
+}
+
+.pullRight{
+  margin-left: auto;
+}
+
+form{
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+label{
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  width: 300px;
+}
+label input{
+  padding: 5px;
+  border: 1px solid #9e9e9e;
+  border-radius: 4px;
 }

@@ -32,7 +32,6 @@ $app->action('/', function (&$view) {
 $app->action('times', function (&$view) {
   global $app;
   global $clients;
-
   $vars= array(
       'title' => 'Times',
       'userInfo' => $app->getUserInfo(),
@@ -41,6 +40,29 @@ $app->action('times', function (&$view) {
   return compact('vars');
 });
 
+// Manage Clients
+$app->action('manage_clients', function (&$view) {
+  global $app;
+  global $clients;
+  $vars= array(
+      'title' => 'Manage Clients',
+      'userInfo' => $app->getUserInfo(),
+      'clients' => $clients
+  );
+  return compact('vars');
+});
+
+// Get a report
+$app->action('report', function (&$view) {
+  global $app;
+  global $clients;
+  $vars= array(
+      'title' => 'Report',
+      'userInfo' => $app->getUserInfo(),
+      'clients' => $clients
+  );
+  return compact('vars');
+});
 
 // Logout
 $app->action('logout', function(){

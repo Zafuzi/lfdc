@@ -27,7 +27,7 @@ $(document).ready(function() {
   $('.selector').on('change', e => {
     let option = $('.selector option:selected');
     let client = clients[option.val()];
-    $('.table_content').empty();
+    $('.times_table').html(table_header);
 
     if(option.val() != ''){
       let times = client.times;
@@ -76,6 +76,19 @@ function calculate(time1, time2) {
   return hours + ":" + minutes;
 }
 
+function table_header(){
+  let row = $('<div class="row header">');
+  row.append(table_col("Date"), table_col("Sign In"), table_col("Sign Out"), table_col("Total (hrs:min)"));
+  return row;
+}
+
 function logout() {
   window.location = '/logout';
+}
+
+function toggle(id, el, toggle_value){
+  $('.modal_bg').fadeToggle(200);
+  $(id).fadeToggle(300);
+  let temp_val = $(el).val();
+  $(el).val((temp_val == 'Close') ? toggle_value : 'Close');
 }

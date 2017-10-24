@@ -7,9 +7,18 @@ html
     if vars.userInfo != ''
       header
         h1 Lil Friends Daycare
+        nav
+          ul
+            li
+              a(href="/manage_clients") Manage
+            li
+              a(href="/times") Times
+            li
+              a(href="/report") Report
         button.btn.btn-header.btn-logout Logout
-      
-    block content
+    
+    .modal_bg
+    block content  
     if vars.userInfo == ''
       script.
         userLoggedIn = false;
@@ -22,6 +31,7 @@ html
       var AUTH0_CLIENT_ID = '<?php echo getenv("AUTH0_CLIENT_ID") ?>';
       var AUTH0_DOMAIN = '<?php echo getenv("AUTH0_DOMAIN") ?>';
       var AUTH0_CALLBACK_URL = '<?php echo getenv("AUTH0_CALLBACK_URL") ?>';
+    script( defer src="./public/app.js")
     block scripts
-    script(src="./public/app.js")
+    
     
